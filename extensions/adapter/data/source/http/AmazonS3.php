@@ -674,7 +674,7 @@ class AmazonS3 extends \lithium\data\source\Http {
 
 	public function createSignedURL($filepath, $expires = null, $filename = null, array $options = array()) {
 		$defaults = array(
-			'scheme' => $this->_options['scheme'],
+			'scheme' => $this->_config['scheme'],
 		);
 		$options += $defaults;
 		
