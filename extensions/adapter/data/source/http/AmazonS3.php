@@ -683,7 +683,7 @@ class AmazonS3 extends \lithium\data\source\Http {
 		$headers = $this->_requestHeaders($params);
 		$authorization = $headers['Authorization'];
 		$authSplit = strpos($authorization, ':');
-		$url = sprintf('http://%s.s3.%s/%s', $source, $this->_config['host'], $filepath);
+		$url = sprintf('%s://%s.s3.%s/%s', $this->_config['scheme'], $source, $this->_config['host'], $filepath);
 		$query = $context + array(
 			'AWSAccessKeyId' => substr($authorization, 4, $authSplit - 4),
 			'Expires'        => $expires,
